@@ -1,0 +1,135 @@
+[gd_scene format=4 uid="uid://dyg3yqhjwuwxo"]
+
+[ext_resource type="Texture2D" uid="uid://76hi8rt1miuo" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_grass.png" id="2_qwp14"]
+[ext_resource type="Texture2D" uid="uid://pgvs2eknvuao" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_planet.png" id="3_xpq2v"]
+[ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="4_0jmjk"]
+[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="5_v8268"]
+[ext_resource type="PackedScene" uid="uid://3ts187hdabi5" path="res://scenes/killerBee.tscn" id="6_4p0dt"]
+[ext_resource type="PackedScene" uid="uid://blq2opvj6w8mc" path="res://scenes/areaWin.tscn" id="6_rcugv"]
+[ext_resource type="Script" uid="uid://cy55qwoowvxtn" path="res://scenes/Spawner2.gd" id="7_qwp14"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3aekd"]
+texture = ExtResource("2_qwp14")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, -23.716003)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, -23.716003)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, -23.716003)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -34.364006, 35.33201)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 34.364, 37.267998, -64, 64)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -16.940002, 8.228004, -64, -23.716003)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -19.844002, 5.324005, 17.907997, -64, 64, -64, -23.716003)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, -23.716003)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, -23.716003)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, -23.716003)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, -23.716003)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, -23.716003)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, -23.716003)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, -64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, 64, -64, 64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, 64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, 64, -64, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, -23.716003)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, -23.716003)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 0.48399353, 64, -64, 64, -64, -23.716003)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_khw7m"]
+texture = ExtResource("3_xpq2v")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, 64, 64, 64, -64, 64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, 64, 64, -64, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wd6ad"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_3aekd")
+sources/1 = SubResource("TileSetAtlasSource_khw7m")
+
+[node name="Level2" type="Node2D" unique_id=1056661870]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1533842850]
+position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAANAAMAAQACAAAAAAANAAIAAQACAAAAAAANAAEAAQACAAAAAAAOAAEAAQACAAAAAAAOAAIAAQACAAAAAAAOAAMAAQACAAAAAAAPAAMAAQACAAAAAAAPAAIAAQACAAAAAAAPAAEAAQACAAAAAAANAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAMAAQAAQAAAAAAAAALAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAACAAQAAQAAAAAAAAAAAAQAAQAAAAAAAAD//wEAAQABAAAAAAD//wAAAQABAAAAAAD/////AQABAAAAAAD///7/AQABAAAAAAD///3/AQAAAAAAAAD+//3/AQAAAAAAAAD+//7/AQABAAAAAAD+////AQABAAAAAAD+/wAAAQABAAAAAAD+/wEAAQABAAAAAAD+/wIAAQABAAAAAAD+/wMAAQABAAAAAAD+/wQAAQABAAAAAAD+/wUAAQABAAAAAAD+/wYAAQABAAAAAAD+/wcAAQABAAAAAAD//wcAAQAAAAAAAAAAAAcAAQAAAAAAAAACAAcAAQAAAAAAAAADAAcAAQAAAAAAAAAFAAcAAQAAAAAAAAAHAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAKAAcAAQAAAAAAAAALAAcAAQAAAAAAAAANAAQAAQABAAAAAAAOAAQAAQABAAAAAAAPAAQAAQABAAAAAAAIAAQAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_wd6ad")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=63006999]
+position = Vector2(1228, 774)
+scale = Vector2(0.59634554, 0.51443297)
+texture = ExtResource("5_v8268")
+
+[node name="AreaWin" parent="Sprite2D2" unique_id=1134629533 instance=ExtResource("6_rcugv")]
+position = Vector2(-5.030639, 36.933857)
+sceneName = "WinScreen"
+
+[node name="Player" parent="." unique_id=1504715078 instance=ExtResource("4_0jmjk")]
+position = Vector2(62, 80)
+
+[node name="KillerBee" parent="." unique_id=1490625753 instance=ExtResource("6_4p0dt")]
+position = Vector2(1486, 70)
+
+[node name="KillerBee2" parent="." unique_id=365209145 instance=ExtResource("6_4p0dt")]
+position = Vector2(22, 372)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2033756630]
+script = ExtResource("7_qwp14")
+obstacle = ExtResource("6_4p0dt")
+player_path = NodePath("../Player")
+
+[node name="AreaWin" parent="." unique_id=1667447092 instance=ExtResource("6_rcugv")]
+position = Vector2(198, 1327)
+sceneName = "LoseScreen"
+
+[node name="AreaWin2" parent="." unique_id=452306526 instance=ExtResource("6_rcugv")]
+position = Vector2(632, 1314)
+sceneName = "LoseScreen"
+
+[node name="AreaWin3" parent="." unique_id=113169593 instance=ExtResource("6_rcugv")]
+position = Vector2(995, 1319)
+sceneName = "LoseScreen"

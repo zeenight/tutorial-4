@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://blq2opvj6w8mc"]
+
+[ext_resource type="Script" uid="uid://pun6q4uppv45" path="res://scenes/WinCondition.gd" id="1_xj3ft"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxknk"]
+size = Vector2(357, 590)
+
+[node name="AreaWin" type="Area2D" unique_id=1134629533]
+script = ExtResource("1_xj3ft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1194085692]
+position = Vector2(0.5, 4)
+shape = SubResource("RectangleShape2D_fxknk")
+
+[connection signal="body_entered" from="." to="." method="_on_Area_Trigger_body_entered"]
