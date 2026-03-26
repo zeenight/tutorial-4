@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*uid://bq31eshjoeorx"
+Transition="*uid://c3vta7auuw5kr"
 
 [input]
 
