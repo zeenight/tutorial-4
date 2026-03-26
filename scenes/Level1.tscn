@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://blq2opvj6w8mc" path="res://scenes/areaWin.tscn" id="3_lrl65"]
 [ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/Spawner.gd" id="5_76388"]
 [ext_resource type="PackedScene" uid="uid://b118pvmscylk6" path="res://scenes/FallingFish.tscn" id="6_svatc"]
+[ext_resource type="Script" uid="uid://gt2lva1rhb5f" path="res://scenes/area_2d.gd" id="7_ecr63"]
+[ext_resource type="PackedScene" uid="uid://b2exhha535rxo" path="res://scenes/Life Counter.tscn" id="7_svatc"]
+[ext_resource type="Script" uid="uid://0th1jtanel5t" path="res://scenes/BackMenu.gd" id="8_n34uq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odhdn"]
 texture = ExtResource("2_bwv4p")
@@ -52,6 +55,9 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_odhdn")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n34uq"]
+size = Vector2(806, 109)
+
 [node name="Level1" type="Node2D" unique_id=551676534]
 
 [node name="Player" parent="." unique_id=2011412513 instance=ExtResource("1")]
@@ -70,21 +76,35 @@ scale = Vector2(0.59634554, 0.51443297)
 texture = ExtResource("2_dw26h")
 
 [node name="AreaWin" parent="Sprite2D2" unique_id=1134629533 instance=ExtResource("3_lrl65")]
-sceneName = "WinScreen"
-
-[node name="AreaWin" parent="." unique_id=265122884 instance=ExtResource("3_lrl65")]
-position = Vector2(172, 1068)
-sceneName = "LoseScreen"
-
-[node name="AreaWin2" parent="." unique_id=1973803786 instance=ExtResource("3_lrl65")]
-position = Vector2(-197, 1076)
-sceneName = "LoseScreen"
-
-[node name="AreaWin4" parent="." unique_id=14486584 instance=ExtResource("3_lrl65")]
-position = Vector2(539, 1065)
-sceneName = "LoseScreen"
+sceneName = "Level2"
 
 [node name="Node2D" type="Node2D" parent="." unique_id=306457097]
 position = Vector2(820, -645)
 script = ExtResource("5_76388")
 obstacle = ExtResource("6_svatc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=512118050]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=779545072]
+offset_right = 109.0
+offset_bottom = 113.0
+
+[node name="LifeCounter" parent="CanvasLayer/MarginContainer" unique_id=2016705203 instance=ExtResource("7_svatc")]
+layout_mode = 2
+
+[node name="LinkButton" type="LinkButton" parent="CanvasLayer/MarginContainer" unique_id=665224060]
+layout_mode = 2
+text = "Back To Menu"
+script = ExtResource("8_n34uq")
+scene_to_load = "MainMenu"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=905457634]
+position = Vector2(-26, 700)
+script = ExtResource("7_ecr63")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=914624649]
+position = Vector2(9, -2)
+shape = SubResource("RectangleShape2D_n34uq")
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/LinkButton" to="CanvasLayer/MarginContainer/LinkButton" method="_on_pressed"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

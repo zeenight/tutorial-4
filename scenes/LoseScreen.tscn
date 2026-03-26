@@ -1,10 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene format=3 uid="uid://g1b35y8xj8vv"]
 
-[ext_resource path="res://assets/dead.jpg" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://bi5p7hlw4wlhv" path="res://assets/dead.jpg" id="1"]
+[ext_resource type="Script" uid="uid://c18bm01b70ksj" path="res://scenes/loseUI.gd" id="2_x3j6d"]
 
-[node name="LoseScreen" type="Node2D"]
+[node name="LoseScreen" type="Node2D" unique_id=565080161]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2( 512, 320 )
-scale = Vector2( 0.76, 0.76 )
-texture = ExtResource( 1 )
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=428481700]
+position = Vector2(283, 208)
+scale = Vector2(0.33285713, 0.23619048)
+texture = ExtResource("1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1288805327]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1138601355]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LinkButton" type="LinkButton" parent="CanvasLayer/MarginContainer" unique_id=2134101309]
+layout_mode = 2
+text = "Back to Main Menu"
+script = ExtResource("2_x3j6d")
+scene_to_load = "MainMenu"
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/LinkButton" to="CanvasLayer/MarginContainer/LinkButton" method="_on_pressed"]
