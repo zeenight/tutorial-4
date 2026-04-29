@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var obstacle : PackedScene
+@export var spawn_rate : float = 3.0
 
 func _ready():
 	repeat()
@@ -17,4 +18,4 @@ func spawn():
 func repeat():
 	while true:
 		spawn()
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(spawn_rate).timeout

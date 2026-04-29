@@ -4,6 +4,7 @@ extends Node2D
 @export var player_path : NodePath
 @export var min_distance : float = 300
 @export var max_distance : float = 600
+@export var spawn_rate : float = 3.0
 
 var player
 
@@ -24,5 +25,5 @@ func spawn():
 
 func repeat():
 	spawn()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(spawn_rate).timeout
 	repeat()
